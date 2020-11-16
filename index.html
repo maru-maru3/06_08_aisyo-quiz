@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+
+<body class="top-space">
+
+    <div class="all-wrapper">
+        <div class="box0">
+            <h1>Q. 相性がいい組み合わせを選べ</h1><br>
+            <h2 id="count">第１問</h2><br>
+        </div>
+
+        <div class="box-wrapper">
+            <div class="box1">
+                <p id="question">あほ</p><span class="plus"> </span></span><br>
+            </div>
+            <div class="box2">
+                <form action="">
+                    <label for="choice00"></label>
+                    <ul>
+                        <li>
+                            <input type="radio" name="choices" id="choice00" value="0">
+                            <label id="choice00_label" for="choice00">ばか</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="choices" id="choice01" value="1">
+                            <label id="choice01_label" for="choice01">スカ</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="choices" id="choice02" value="2">
+                            <label id="choice02_label" for="choice02">ハゲ</label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button id="button">START</button>
+    </div>
+
+    <!-- 
+    <span id="collectAnswer"></span> -->
+
+    <!-- htmlここまで -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('#button').click(function () {
+            // 配列
+            const questions = [
+                'あほ',
+                '美女',
+                '温泉',
+                'ロック',
+                '偽りの',
+                'たかい',
+                'さん',
+            ];
+            const choices = [
+                ['ばか', 'スカ', 'ハゲ'],
+                ['野獣メン', 'デブメン', 'イケメン'],
+                ['玉子', 'るるぶ', '殺人事件'],
+                ['オンザ', 'タウン', '・ユー！'],
+                ['笑顔', '愛', '眼'],
+                ['たかい', 'ひくい', 'つらい'],
+                ['ざんだ', 'たさん', '年1組'],
+            ];
+
+            // 正解の定義
+            const answer = [1, 2, 0, 2, 1, 0, 0];
+            // カウント用変数
+            let count = 0;
+            let correct = 0;
+            // 最初の問題と選択肢を表示
+            $(`#question`).text(questions[count]);
+            $(`#choice00_label`).text(choices[count][0]);
+            $(`#choice01_label`).text(choices[count][1]);
+            $(`#choice02_label`).text(choices[count][2]);
+            $(`#choice03_label`).text(choices[count][3]);
+            $(`#choice04_label`).text(choices[count][4]);
+            $(`#choice05_label`).text(choices[count][5]);
+            $(`#choice06_label`).text(choices[count][6]);
+            // クリック時に正誤判定&次の問題の内容を表示
+            // ()…値とか色々入る　｛｝…オブジェクト　[]…配列
+            $(`input[name="choices"]`).on(`click`, function () {
+                if ($(this).val() == answer[count]) {
+                    alert('OK!!');
+                    // $('#result').text('OK!!');
+                    // correct++;
+                } else {
+                    alert('NG!!');
+                    // $('#result').text('NG!!');
+                }
+
+
+                count++
+                if (count < questions.length) {
+
+                    $(`#count`).text('第' + (Number(count) + 1) + '問');
+                    $(`#collectAnswer`).text(correct);
+                    $('#question').text(questions[count]);
+                    $(`#choice00_label`).text(choices[count][0]);
+                    $(`#choice01_label`).text(choices[count][1]);
+                    $(`#choice02_label`).text(choices[count][2]);
+                    $(`#choice03_label`).text(choices[count][3]);
+                    $(`#choice04_label`).text(choices[count][4]);
+                    $(`#choice05_label`).text(choices[count][5]);
+                    $(`#choice06_label`).text(choices[count][6]);
+                } else {
+                    alert('終了！');
+                    alert(correct + '問正解！');
+                }
+            });
+
+        });
+
+
+
+        // JQuery で、だした結果を HTML上で表示する
+        $(document).on('ready', function () {
+            $("#question").text(collectAnswer);
+        });
+
+        // クリックしたらクイズ開始
+        $('#button').on('click', function () {
+            alert("click!");
+        });
+
+
+    </script>
+    </div>
+    </div>
+</body>
+
+</html>

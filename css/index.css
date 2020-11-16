@@ -1,0 +1,97 @@
+
+body {
+        background-image: url(../img/kiss.png);
+        background-size: cover;
+        text-align: center;
+      position: relative
+    }
+
+.top-space{
+  padding-top:100px;
+}
+
+.all-wrapper{
+  
+      width:850px;
+      height:450px;
+      border: solid 5px #000000;
+      background-color: beige;
+               margin: 0 auto;      
+
+}
+
+h1{
+  padding-top:20px;
+}
+
+#question{
+font-size: 120px;
+font-weight: bold;
+}
+
+
+
+ul{
+list-style: none;
+}
+
+li{
+  font-size: 30px;
+  font-weight: bold;
+line-height: 1.7em;
+letter-spacing: 0.3em;
+}
+
+.plus{
+  font-size:60px;
+}
+
+/* エンドページの背景2枚重ね中央揃え */
+.box {
+    position:relative;
+    top: 50%;
+  background: center;
+}
+
+#button{
+  height:50px;
+  width:120px;
+  background-color: azure;
+    font-weight: bold;
+  letter-spacing: 0.3em;
+}
+
+.box0{
+text-align: center;
+}
+
+.box-wrapper{
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.box1{
+    width:550px;
+     text-align: center;
+
+}
+
+.box2{
+    width:300px;
+        text-align: left;
+margin: 0 auto;
+}
+
+
+
+#question{
+    font-size: 150px;
+    font-style: bold;
+}
+
+#collectAnswer{
+       font-size: 80px;
+    font-style: bold; 
+}
+
